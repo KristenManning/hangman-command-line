@@ -18,7 +18,7 @@ Word = function(word){
 		display_string = ""
 		for (i in this.word_letters){
 			display_string += this.word_letters[i].display()
-		}
+		};
 		return display_string
 	};
 	// searches word for letters that match guess 
@@ -30,6 +30,13 @@ Word = function(word){
 				}
 			}
 		}
+	};
+	this.empty = function(){
+		var empty_word = ""
+		for (i in this.word){
+			empty_word += "_"
+		}
+		return empty_word
 	}
 };
 
