@@ -13,7 +13,7 @@ var correct_guesses;
 
 // Storing phrases to be randomly used after guesses 
 var negative_exclamations = ["Oops!", "Sorry!", "Too bad...", "Nope!", "Uh-oh!", "Not this time...", "Yikes", "Better luck next time"] 
-var positive_exclamations = ["Wow", "You rock!", "Nice work!", "Lucky guess...", "Keep it up!", "Woohoo!", "YAY"]
+var positive_exclamations = ["WOW!", "You rock!", "Nice work!", "Lucky guess...", "Keep it up!", "Woohoo!", "YAY"]
 
 // Storing alphabet for type checking 
 var alphabet = "abcdefghijklmnopqrstuvwxyz"
@@ -148,7 +148,7 @@ function askForLetter(word_obj, word_status){
 
 	    			// If guesses remain 
 	    			if (incorrect_guesses.length <= guess_count){
-	    				console.log(word_status)
+	    				console.log('\x1b[36m%s\x1b[0m', word_status)
 	    				console.log("")
 
 	    				askForLetter(word_obj, word_status);
@@ -177,7 +177,7 @@ function askForLetter(word_obj, word_status){
 	    			console.log(randFromList(positive_exclamations))
 	    			console.log("")
 	    			console.log("Incorrect Guesses: " + incorrect_guesses)
-	    			console.log(word_status)
+	    			console.log('\x1b[36m%s\x1b[0m', word_status)
 	    			console.log("")
 
 	    			askForLetter(word_obj, word_status);
@@ -187,7 +187,7 @@ function askForLetter(word_obj, word_status){
 	    			word_status = updated_word_status
 	    			wins ++ 
 
-	    			console.log(word_status)
+	    			console.log('\x1b[36m%s\x1b[0m', word_status)
 	    			console.log("Congratulations! You've won!")
 	    			console.log("Score: " + wins)
 	    			console.log("--------------------------------")
